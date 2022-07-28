@@ -6,6 +6,9 @@ defineProps({
 })
 
 const count = ref(0)
+const popup = () => {
+    window.alert('button clicked')
+}
 </script>
 
 <template>
@@ -13,9 +16,9 @@ const count = ref(0)
 
   <p>
     Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank" class="text-green-600">VS Code</a>
+    <a href="https://code.visualstudio.com/"  class="text-green-600">VS Code</a>
     +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" class="text-green-600">Volar</a>
+    <a href="https://github.com/johnsoncodehk/volar" class="text-green-600">Volar</a>
   </p>
 
   <p>
@@ -27,8 +30,5 @@ const count = ref(0)
   </p>
 
   <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+   <button class="bg-red-700 text-white mx-2 px-4 py-2 rounded hover:bg-red-500" @click="popup">alert</button>
 </template>
