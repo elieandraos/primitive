@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lora: "'Lora', serif",
+        dm: "'DM Mono', monospace"
+      },
       // backgroundImage: theme => ({
       //   'pattern': "url('../src/assets/bg-pattern.png')",
       // }),
