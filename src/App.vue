@@ -1,13 +1,7 @@
 <template>
-  <div class="relative h-full">
-      <div class="relative w-full max-w-lg h-full max-h-96 border-2">
-          <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70  animate-blob animation-delay-4000"></div>
+  <div class="relative h-full bg-white">
+      <div class="h-full  pl-20 py-10 pr-10">
+          <router-view></router-view>
       </div>
   </div>
 </template>
-
-<script setup>
-import Logo from '@/components/ui/Logo.vue'
-</script>

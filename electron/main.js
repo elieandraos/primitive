@@ -3,8 +3,8 @@ const path = require('path')
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 1200,
-        height: 760,
+        width: 1024,
+        height: 680,
         titleBarStyle: 'hidden',
         titleBarOverlay: true,
         webPreferences: {
