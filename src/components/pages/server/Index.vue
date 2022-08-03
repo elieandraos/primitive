@@ -1,8 +1,10 @@
 <template>
     <div class="w-full h-full flex items-center justify-center">
+        <div class="w-4/5">
             <bubble-bg-animation-lg>
-                <card title="Local server"></card>
+                <card title="Localhost"></card>
             </bubble-bg-animation-lg>
+        </div>
     </div>
 </template>
 

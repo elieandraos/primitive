@@ -12,7 +12,7 @@ module.exports = {
         marck: "'Marck Script', cursive"
       },
       height: {
-        '128': '32rem',
+        '128': '34rem',
       },
       animation: {
         blob: "blob 7s infinite",

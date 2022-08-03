@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full bg-white bg-opacity-70 rounded-lg p-6">
+    <div class="h-full bg-white bg-opacity-90 rounded-lg p-6">
         <div class="font-roboto font-light text-2xl text-black mb-6">{{ title }}</div>
         <slot></slot>
     </div>

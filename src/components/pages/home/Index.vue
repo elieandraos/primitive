@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full flex items-center">
+    <div class="w-full h-128 flex items-center">
         <bubble-bg-animation>
             <div class="space-y-4 font-thin">
                 <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
