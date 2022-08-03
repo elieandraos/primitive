@@ -17,17 +17,16 @@
                     <div>8.1.3</div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg px-6 py-4 flex justify-between items-center text-gray-400 lowercase cursor-pointer" @click="navigate('laravel')">
-                    <img src="@/assets/laravel.png" alt="laravel" class="h-12">
+                <div class="bg-white w-full rounded-lg px-6 py-4 flex justify-between items-center text-gray-400 lowercase cursor-pointer">
+                    <img src="@/assets/laravel.svg" alt="laravel" class="h-12">
                     <div>9.0.13</div>
                 </div>
             </div>
         </bubble-bg-animation>
 
         <div class="w-full flex flex-col items-center justify-center">
-            <primitive-logo class="w-48 mb-4"></primitive-logo>
-            <p class="text-gray-500 italic">It's like laravel forge</p>
-            <p class="text-gray-500 italic">but for your local environment</p>
+            <div class="text-6xl text-slate-700 capitalize font-marck">primitive</div>
+            <p class="text-slate-400 font-roboto font-thin text-xl text-center mt-2">It's like laravel forge<br/> but for your local environment</p>
         </div>
     </div>
 </template>
@@ -36,10 +35,4 @@
 import { useRouter } from 'vue-router'
 import PrimitiveLogo from '@/components/ui/PrimitiveLogo.vue'
 import BubbleBgAnimation from '@/components/ui/BubbleBgAnimation.vue'
-
-const router = useRouter()
-
-const navigate = (route) => {
-    router.push({ name: route})
-}
 </script>

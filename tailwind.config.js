@@ -7,14 +7,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        lora: "'Lora', serif",
-        dm: "'DM Mono', monospace"
+        roboto: "'Roboto', serif",
+        dm: "'DM Mono', monospace",
+        marck: "'Marck Script', cursive"
       },
-      // backgroundImage: theme => ({
-      //   'pattern': "url('../src/assets/bg-pattern.png')",
-      // }),
+      height: {
+        '128': '32rem',
+      },
       animation: {
         blob: "blob 7s infinite",
+        blobLg: "blob 7s infinite",
       },
       keyframes: {
         blob: {
@@ -26,6 +28,20 @@ module.exports = {
           },
           "66%": {
             transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        },
+        blobLg: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(50px, -80px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-40px, 40px) scale(0.9)",
           },
           "100%": {
             transform: "translate(0px, 0px) scale(1)",

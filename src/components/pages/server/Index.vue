@@ -1,10 +1,8 @@
 <template>
     <div class="w-full h-full flex items-center justify-center">
-        <div class="w-4/5">
             <bubble-bg-animation-lg>
-                <card title="Laravel Ecosystem"></card>
+                <card title="Local server"></card>
             </bubble-bg-animation-lg>
-        </div>
     </div>
 </template>
 
