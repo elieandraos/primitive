@@ -1,25 +1,25 @@
 <template>
     <div class="w-full h-full flex items-center">
         <bubble-bg-animation>
-            <div class="space-y-4">
-                <div class="bg-white w-full rounded-lg px-6 py-4 flex justify-between items-center text-gray-400 lowercase">
-                    <img src="@/assets/php.png" alt="php" class="h-10">
-                    <div>8.1.8</div>
+            <div class="space-y-4 font-thin">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
+                    <img src="@/assets/php.svg" alt="php" class="h-12">
+                    <div>PHP 8.1.8</div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg px-6 py-1 flex justify-between items-center text-gray-400 lowercase">
-                    <img src="@/assets/composer.png" alt="composer" class="h-16">
-                   <div>2.2.4</div>
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
+                    <img src="@/assets/composer.png" alt="composer" class="-ml-2 h-12">
+                   <div>Composer 2.2.4</div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg px-6 py-4 flex justify-between items-center text-gray-400 lowercase">
-                    <img src="@/assets/npm.png" alt="npm" class="h-8">
-                    <div>8.1.3</div>
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
+                    <img src="@/assets/npm.svg" alt="npm" class="h-7">
+                    <div>NPM 8.1.3</div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg px-6 py-4 flex justify-between items-center text-gray-400 lowercase cursor-pointer">
-                    <img src="@/assets/laravel.svg" alt="laravel" class="h-12">
-                    <div>9.0.13</div>
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase cursor-pointer">
+                    <img src="@/assets/mysql.svg" alt="mySql" class="h-10">
+                    <div>MySQL 14.8.2</div>
                 </div>
             </div>
         </bubble-bg-animation>
