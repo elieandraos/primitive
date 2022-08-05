@@ -2,24 +2,24 @@
     <div class="w-full h-128 flex items-center">
         <bubble-bg-animation>
             <div class="space-y-4 font-thin">
-                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-500 lowercase">
                     <icon-php class="h-8 text-indigo-500"></icon-php>
-                    <div>PHP 8.1.8</div>
+                    <div>PHP <span class="text-gray-300">8.1.8</span></div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center lowercase">
                     <img src="@/assets/logos/composer.png" alt="composer" class="-ml-2 h-12">
-                   <div>Composer 2.2.4</div>
+                    <div>Composer <span class="text-gray-300">2.2.4</span></div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center lowercase">
                     <icon-npm class="h-7 text-red-500" ></icon-npm>
-                    <div>NPM 8.1.3</div>
+                    <div>NPM <span class="text-gray-300">8.1.3</span></div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-400 lowercase cursor-pointer">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center lowercase cursor-pointer">
                     <icon-mysql class="h-8 text-teal-500"></icon-mysql>
-                    <div>MySQL 14.8.2</div>
+                    <div>MySQL <span class="text-gray-300">14.8.2</span></div>
                 </div>
             </div>
         </bubble-bg-animation>

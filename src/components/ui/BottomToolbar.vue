@@ -5,12 +5,12 @@
                 <icon-home class="w-8 h-8 ml-12"></icon-home>
             </div>
 
-            <div class="hover:text-indigo-300" :class="{ 'text-indigo-300': activeRoute === 'phpversions' }" @click="navigate('phpversions')">
-                <icon-php class="w-8 h-8 mx-12"></icon-php>
+            <div class="hover:text-lime-300" :class="{ 'text-lime-300': activeRoute === 'server' }" @click="navigate('server')">
+                <icon-server class="w-8 h-8 mx-12"></icon-server>
             </div>
 
-            <div class="hover:text-lime-300" :class="{ 'text-lime-300': activeRoute === 'server' }" @click="navigate('server')">
-                <icon-server class="w-8 h-8"></icon-server>
+            <div class="hover:text-indigo-300" :class="{ 'text-indigo-300': activeRoute === 'phpversions' }" @click="navigate('phpversions')">
+                <icon-php class="w-8 h-8"></icon-php>
             </div>
 
             <div class="hover:text-teal-300" :class="{ 'text-teal-300': activeRoute === 'packages' }" @click="navigate('packages')">
