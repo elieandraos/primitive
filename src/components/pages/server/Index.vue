@@ -15,10 +15,8 @@
                                 <span class="mx-2">{{ service.name }}</span>
                                 <span class="text-gray-300">{{ service.version }}</span>
                             </div>
-                            <div>
-                                <svg class="h-4 w-4" :class="service.status" fill="currentColor" viewBox="0 0 8 8">
-                                    <circle cx="4" cy="4" r="3" />
-                                </svg>
+                            <div :class="service.status">
+                                <icon-dot class="w-4 h-4"></icon-dot>
                             </div>
                         </li>
                     </ul>
@@ -29,8 +27,9 @@
 </template>
 
 <script setup>
-import BubbleBgAnimationLg from "@/components/ui/BubbleBgAnimationLg.vue"
 import Card from "@/components/ui/Card.vue"
+import IconDot from '@/components/ui/icons/IconDot.vue'
+import BubbleBgAnimationLg from "@/components/ui/BubbleBgAnimationLg.vue"
 
 const services = [
     { name: 'nginx', version: '16.0.9', status: 'text-green-200' },
