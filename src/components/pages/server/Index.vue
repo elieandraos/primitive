@@ -11,7 +11,6 @@
                             class="flex justify-between items-center p-4 font-light text-sm lowercase text-gray-500"
                         >
                             <div class="flex items-center">
-                                <img :src="`/src/assets/logos/${service.name}.svg`" alt="" class="h-6">
                                 <span class="mx-2">{{ service.name }}</span>
                                 <span class="text-gray-300">{{ service.version }}</span>
                             </div>
