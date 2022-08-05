@@ -33,7 +33,6 @@ import BubbleBgAnimationLg from "@/components/ui/BubbleBgAnimationLg.vue"
 import Card from "@/components/ui/Card.vue"
 
 const services = [
-    { name: 'php', version: '8.1.8', status: 'text-green-200' },
     { name: 'nginx', version: '16.0.9', status: 'text-green-200' },
     { name: 'mysql', version: '7.7.5', status: 'text-green-200' },
     { name: 'redis', version: '5.2.3', status: 'text-green-200' },
