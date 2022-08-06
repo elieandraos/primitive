@@ -4,7 +4,7 @@
             v-for="service
             in services"
             :key="service.name"
-            class="flex justify-between items-center py-4 font-light text-sm lowercase text-gray-500"
+            class="flex justify-between items-center py-4 font-light text-sm lowercase"
         >
             <div class="flex items-center">
                 <span class="mr-2">{{ service.name }}</span>

@@ -2,7 +2,7 @@
     <div class="w-full h-128 flex items-center">
         <bubble-bg-animation>
             <div class="space-y-4 font-thin">
-                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center text-gray-500 lowercase">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center lowercase">
                     <icon-php class="h-8 text-indigo-500"></icon-php>
                     <div>PHP <span class="text-gray-300">8.1.8</span></div>
                 </div>
