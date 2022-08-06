@@ -17,7 +17,7 @@
                     <div>NPM <span class="text-gray-300">8.1.3</span></div>
                 </div>
 
-                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center lowercase cursor-pointer">
+                <div class="bg-white w-full rounded-lg h-16 py-1 px-4 flex justify-between items-center lowercase">
                     <icon-mysql class="h-8 text-teal-500"></icon-mysql>
                     <div>MySQL <span class="text-gray-300">14.8.2</span></div>
                 </div>
