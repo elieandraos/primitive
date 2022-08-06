@@ -14,6 +14,7 @@ module.exports = {
       height: {
         '128': '34rem',
       },
+      display: ["group-hover"],
       animation: {
         blob: "blob 7s infinite",
         blobLg: "blob 7s infinite",
