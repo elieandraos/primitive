@@ -6,13 +6,17 @@
             :key="service.name"
             class="flex justify-between items-center py-4 font-light text-sm lowercase group"
         >
-            <div class="flex items-center">
+            <div class="w-48 flex items-center">
                 <icon-dot class="w-4 h-4" :class="{'text-green-200': service.running, 'text-red-200': !service.running }"></icon-dot>
-                <span class="mx-2">{{ service.name }}</span>
+                <span class="mx-2" v-tooltip.top="'test data'">{{ service.name }}</span>
                 <span class="text-gray-300">{{ service.version }}</span>
             </div>
 
-            <div class="hidden cursor-pointer group-hover:block">
+            <div class="grow italic invisible text-gray-300 text-xs group-hover:visible">
+                service installed and running
+            </div>
+
+            <div class="w-48 invisible cursor-pointer group-hover:visible">
                 <span class="text-xs mx-4" v-if="service.installed">uninstall</span>
                 <span class="text-xs mx-4" v-else>install</span>
 
