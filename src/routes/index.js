@@ -26,7 +26,7 @@ const routes =  [
         path: '/packages',
         component: Packages,
         name: 'packages',
-        meta: { cardLayout: true, title: 'Global Packages' }
+        meta: { cardLayout: true, title: 'NPM Global Packages' }
     },
     {
         path: '/laravel',

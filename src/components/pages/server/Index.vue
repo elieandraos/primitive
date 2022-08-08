@@ -8,7 +8,7 @@
         >
             <div class="w-48 flex items-center">
                 <icon-dot class="w-4 h-4" :class="{'text-green-200': service.running, 'text-red-200': !service.running }"></icon-dot>
-                <span class="mx-2" v-tooltip.top="'test data'">{{ service.name }}</span>
+                <span class="mx-2">{{ service.name }}</span>
                 <span class="text-gray-300">{{ service.version }}</span>
             </div>
 
