@@ -12,16 +12,25 @@
                 <span class="text-gray-300">{{ service.version }}</span>
             </div>
 
-            <div class="grow italic invisible text-gray-300 text-xs group-hover:visible">
-                service installed and running
+            <div class="grow italic invisible text-center text-gray-300 group-hover:visible">
+                {{ getStatus(service) }}
             </div>
 
-            <div class="w-48 invisible cursor-pointer group-hover:visible">
-                <span class="text-xs mx-4" v-if="service.installed">uninstall</span>
-                <span class="text-xs mx-4" v-else>install</span>
+            <div class="w-48 invisible cursor-pointer group-hover:visible text-right">
+                <span class="text-xs mx-4" v-if="service.running" v-tooltip="'stop service'">
+                    <icon-stop class="w-7 h-7 text-gray-300 hover:text-orange-400"></icon-stop>
+                </span>
 
-                <span class="text-xs mx-4" v-if="service.running">stop service</span>
-                <span class="text-xs mx-4" v-if="service.installed && !service.running">start service</span>
+                <span class="text-xs mx-4" v-if="service.installed && !service.running" v-tooltip="'start service'">
+                    <icon-play class="w-7 h-7 text-gray-300 hover:text-green-400"></icon-play>
+                </span>
+
+                <span class="text-xs mx-4" v-tooltip="'uninstall service'" v-if="service.installed">
+                    <icon-remove class="w-7 h-7 text-gray-300 hover:text-red-400"></icon-remove>
+                </span>
+                <span class="text-xs mx-4" v-tooltip="'install service'" v-else>
+                    <icon-download class="w-7 h-7 text-gray-300 hover:text-green-400"></icon-download>
+                </span>
             </div>
         </li>
     </ul>
@@ -29,6 +38,10 @@
 
 <script setup>
 import IconDot from '@/components/ui/icons/IconDot.vue'
+import IconPlay from '@/components/ui/icons/IconPlay.vue'
+import IconStop from '@/components/ui/icons/IconStop.vue'
+import IconDownload from '@/components/ui/icons/IconDownload.vue'
+import IconRemove from '@/components/ui/icons/IconRemove.vue'
 
 const services = [
     { name: 'nginx', version: '16.0', installed: true, running: true },
@@ -38,4 +51,12 @@ const services = [
     { name: 'mariadb', version: '11.6', installed: false, running: false },
     { name: 'redis', version: '5.2', installed: true, running: true },
 ]
+
+const getStatus = ({installed, running}) => {
+    const installedStatus = installed ? 'service installed' : 'service not installed'
+    const runningStatus = running ? 'running' : 'not running'
+
+    return !installed ? installedStatus : `${installedStatus} and ${runningStatus}`
+
+}
 </script>

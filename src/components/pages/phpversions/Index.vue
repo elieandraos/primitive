@@ -26,7 +26,7 @@
                         </span>
                     </span>
                     <span v-if="installed && !active">
-                        set default
+                        <span class="text-xs border-b pb-0.5 border-gray-600 cursor-pointer hover:text-blue-600 hover:border-blue-600">set default</span>
                     </span>
                     <span v-if="!installed && !active">
                         -
