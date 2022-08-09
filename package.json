@@ -1,5 +1,6 @@
 {
   "name": "primitive",
+  "description": "It's like laravel forge but for your local environment",
   "private": true,
   "version": "0.0.0",
   "main": "electron/main.js",
@@ -13,7 +14,6 @@
     "electron:start": "vite build && electron ."
   },
   "dependencies": {
-    "shelljs": "^0.8.5",
     "vue": "^3.2.25",
     "vue-router": "^4.1.3"
   },
