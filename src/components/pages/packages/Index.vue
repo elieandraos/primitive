@@ -8,10 +8,12 @@
         >
             <div class="grow">
                 <div class="flex items-center">
-                    <span class="mr-2 text-black">{{ pckg.name }}</span>
+                    <icon-dot class="w-4 h-4" :class="{'text-green-200': pckg.installed, 'text-red-200': !pckg.installed }"></icon-dot>
+                    <span class="mx-2 text-black">{{ pckg.name }}</span>
                     <span class="text-gray-300">{{ pckg.version }}</span>
+                    <span class="bg-yellow-100 text-yellow-800 text-xs mr-2 px-2.5 py-0.5 rounded" v-if="pckg.updateAvailable">update available</span>
                 </div>
-                <div class="grow text-xs text-purple-400 hidden group-hover:block">
+                <div class="grow text-xs ml-6 text-slate-400 hidden group-hover:block">
                     {{ pckg.description }}
                 </div>
             </div>
@@ -37,6 +39,7 @@
 import IconDownload from '@/components/ui/icons/IconDownload.vue'
 import IconRemove from '@/components/ui/icons/IconRemove.vue'
 import IconGithub from '@/components/ui/icons/IconGithub.vue'
+import IconDot from '@/components/ui/icons/IconDot.vue'
 
 const npmPackages = [
     {
@@ -44,14 +47,14 @@ const npmPackages = [
         version: '8.1',
         installed: true,
         updateAvailable: true,
-        description: 'package manager for the Node JavaScript platform'
+        description: 'package manager for the Node JavaScript platform',
     },
     {
         name: '@elieandraos/create-nodejs-package',
         version: '1.0.15',
         installed: true,
         updateAvailable: false,
-        description: 'a cli tool that scaffolds and configures everything you need to develop nodeJs packages'
+        description: 'a cli tool that scaffolds everything you need to develop nodeJs packages'
     },
     {
         name: '@elieandraos/primitive',

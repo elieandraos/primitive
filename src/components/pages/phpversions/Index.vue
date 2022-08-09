@@ -15,7 +15,7 @@
                         </span>
                     </span>
                     <span v-else>
-                        -
+                        <span class="text-xs border-b pb-0.5 border-gray-600 cursor-pointer hover:text-blue-600 hover:border-blue-600">install</span>
                     </span>
                 </td>
                 <td>
