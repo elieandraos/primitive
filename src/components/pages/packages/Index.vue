@@ -17,10 +17,9 @@
                     {{ pckg.description }}
                 </div>
             </div>
-
-
-            <div class="w-24 flex invisible cursor-pointer group-hover:visible text-right">
-                <span class="text-xs mx-4" v-tooltip="'github repos'">
+            
+            <div class="w-24 flex justify-end invisible cursor-pointer group-hover:visible text-right">
+                <span class="text-xs mx-4" v-tooltip="'github repos'" v-if="pckg.githubRepos">
                     <icon-github class="w-7 h-7 text-gray-300 hover:text-slate-700"></icon-github>
                 </span>
 
@@ -48,34 +47,39 @@ const npmPackages = [
         installed: true,
         updateAvailable: true,
         description: 'package manager for the Node JavaScript platform',
+        githubRepos: ''
     },
     {
         name: '@elieandraos/create-nodejs-package',
         version: '1.0.15',
         installed: true,
         updateAvailable: false,
-        description: 'a cli tool that scaffolds everything you need to develop nodeJs packages'
+        description: 'a cli tool that scaffolds everything you need to develop nodeJs packages',
+        githubRepos: 'https://github.com/elieandraos/create-nodejs-package'
     },
     {
         name: '@elieandraos/primitive',
         version: '1.0.0',
         installed: true,
         updateAvailable: false,
-        description: 'a cli tool that manages your local environment for laravel/web development'
+        description: 'a cli tool that manages your local environment for laravel/web development',
+        githubRepos: 'https://github.com/elieandraos/primitive'
     },
     {
         name: 'laravel-echo-server',
         version: '3.6.2',
         installed: true,
         updateAvailable: true,
-        description: 'NodeJs server for Laravel Echo broadcasting with Socket.io'
+        description: 'NodeJs server for Laravel Echo broadcasting with Socket.io',
+        githubRepos: 'https://github.com/tlaverdure/laravel-echo-server'
     },
     {
         name: 'npm-check-updates',
         version: '4.2.1',
         installed: false,
         updateAvailable: false,
-        description: 'upgrades your package.json npm dependencies to the latest versions, ignoring specified versions.'
+        description: 'upgrades your package.json npm dependencies to the latest versions, ignoring specified versions.',
+        githubRepos: 'https://github.com/raineorshine/npm-check-updates'
     },
 
 ]
