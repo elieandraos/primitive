@@ -12,23 +12,23 @@
                 <span class="text-gray-300">{{ service.version }}</span>
             </div>
 
-            <div class="grow italic invisible text-center text-gray-300 group-hover:visible">
+            <div class="grow italic invisible text-center text-slate-200 group-hover:visible">
                 {{ getStatus(service) }}
             </div>
 
             <div class="w-48 invisible cursor-pointer group-hover:visible text-right">
-                <span class="text-xs mx-4" v-if="service.running" v-tooltip="'stop service'">
+                <span class="text-xs mx-2" v-if="service.running" v-tooltip="'stop service'">
                     <icon-stop class="w-7 h-7 text-gray-300 hover:text-orange-400"></icon-stop>
                 </span>
 
-                <span class="text-xs mx-4" v-if="service.installed && !service.running" v-tooltip="'start service'">
+                <span class="text-xs mx-2" v-if="service.installed && !service.running" v-tooltip="'start service'">
                     <icon-play class="w-7 h-7 text-gray-300 hover:text-green-400"></icon-play>
                 </span>
 
-                <span class="text-xs mx-4" v-tooltip="'uninstall service'" v-if="service.installed">
+                <span class="text-xs mx-2" v-tooltip="'uninstall service'" v-if="service.installed">
                     <icon-remove class="w-7 h-7 text-gray-300 hover:text-red-400"></icon-remove>
                 </span>
-                <span class="text-xs mx-4" v-tooltip="'install service'" v-else>
+                <span class="text-xs mx-2" v-tooltip="'install service'" v-else>
                     <icon-download class="w-7 h-7 text-gray-300 hover:text-green-400"></icon-download>
                 </span>
             </div>

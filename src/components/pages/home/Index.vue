@@ -26,6 +26,7 @@
 
         <div class="w-full flex flex-col items-center justify-center">
             <div class="text-6xl text-slate-700 capitalize font-marck">primitive</div>
+            <div class="mb-4">For Mac minimalists who do not use vagrant/homestead/docker</div>
             <p class="text-slate-400 font-roboto font-thin text-xl text-center mt-2">It's like laravel forge<br/> but for your local environment</p>
         </div>
     </div>

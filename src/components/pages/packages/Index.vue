@@ -13,20 +13,20 @@
                     <span class="text-gray-300">{{ pckg.version }}</span>
                     <span class="bg-yellow-100 text-yellow-800 text-xs mr-2 px-2.5 py-0.5 rounded" v-if="pckg.updateAvailable">update available</span>
                 </div>
-                <div class="grow text-xs ml-6 text-slate-400 hidden group-hover:block">
+                <div class="grow text-xs mt-1 ml-6 text-slate-400 hidden group-hover:block">
                     {{ pckg.description }}
                 </div>
             </div>
-            
+
             <div class="w-24 flex justify-end invisible cursor-pointer group-hover:visible text-right">
-                <span class="text-xs mx-4" v-tooltip="'github repos'" v-if="pckg.githubRepos">
+                <span class="text-xs mx-2" v-tooltip="'github repos'" v-if="pckg.githubRepos">
                     <icon-github class="w-7 h-7 text-gray-300 hover:text-slate-700"></icon-github>
                 </span>
 
-                <span class="text-xs mx-4" v-tooltip="'uninstall package'" v-if="pckg.installed">
+                <span class="text-xs mx-2" v-tooltip="'uninstall package'" v-if="pckg.installed">
                     <icon-remove class="w-7 h-7 text-gray-300 hover:text-red-400"></icon-remove>
                 </span>
-                <span class="text-xs mx-4" v-tooltip="'install package'" v-else>
+                <span class="text-xs mx-2" v-tooltip="'install package'" v-else>
                     <icon-download class="w-7 h-7 text-gray-300 hover:text-green-400"></icon-download>
                 </span>
             </div>
