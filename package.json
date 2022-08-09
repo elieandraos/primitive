@@ -1,5 +1,5 @@
 {
-  "name": "primitive",
+  "name": "@elieandraos/primitive",
   "description": "It's like laravel forge but for your local environment",
   "version": "0.0.1",
   "main": "electron/main.js",
