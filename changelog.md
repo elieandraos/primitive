@@ -1,5 +1,5 @@
 # Changelog
-## v0.0.2
+## v0.0.3
 ### Fixed
 - :alembic: run npm install before launch
 
