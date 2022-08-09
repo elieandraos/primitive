@@ -1,7 +1,7 @@
 {
   "name": "@elieandraos/primitive",
   "description": "It's like laravel forge but for your local environment",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "electron/main.js",
   "bin": {
     "primitive": "bin/primitive.js"
