@@ -1,4 +1,8 @@
 # Changelog
+## v0.0.4
+### Fixed
+- :package: upgrade dependencies to latest
+
 ## v0.0.3
 ### Fixed
 - :alembic: run npm install before launch
