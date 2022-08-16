@@ -1,5 +1,7 @@
 # Changelog
 ## v0.0.4
+### Added
+- :boom: cli menu
 ### Fixed
 - :package: upgrade dependencies to latest
 
