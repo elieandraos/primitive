@@ -3,7 +3,7 @@
 ### Added
 - :boom: cli menu
 - :green_heart: cli menu unit tests
-### Fixed
+### Changed
 - :package: upgrade dependencies to latest
 
 ## v0.0.3
