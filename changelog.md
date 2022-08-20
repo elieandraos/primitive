@@ -2,6 +2,7 @@
 ## v0.0.5
 ### Added
 - :bricks: file system helper functions
+- :bricks: console helper functions
 - :green_heart: filesystem tests
 - :lock: release pre-requisites check
   - command running from root directory
