@@ -34,9 +34,13 @@ const scaffoldPackageBoilerplate = () => {
     console.log('Scaffold npm package boilerplate')
 }
 
-const release = async (publishToGithub) => {
-   const validToken = await _release.validateGithubToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
-   console.log(validToken)
+const release = async (publishToGithub = true) => {
+    // check if running from root directory
+    console.log(_release.isRunningFromRootDirectory())
+
+    // check if github token is valid
+    const validToken = await _release.validateGithubToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
+    console.log(validToken)
 }
 
 module.exports = {

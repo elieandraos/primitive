@@ -23,6 +23,10 @@ const createDirectory = (dir, options = {}) => {
     fs.mkdirSync(dir, options)
 }
 
+const deleteDirectory = (dir) => {
+    fs.rm(dir, {recursive: true, force: true}, () => {})
+}
+
 const emptyDirectory = (src) => {
     if (!isDirectory(src)) throw `directory ${src} does not exist`
 
@@ -64,5 +68,6 @@ module.exports = {
     isFile,
     createDirectory,
     emptyDirectory,
-    copy
+    copy,
+    deleteDirectory
 }
