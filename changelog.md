@@ -1,6 +1,14 @@
 # Changelog
 ## v0.0.4
 ### Added
+- :bricks: file system helper functions
+- :green_heart: filesystem tests
+- :lock: release pre-requisites check
+  - command running from root directory
+  - github token valid
+
+## v0.0.4
+### Added
 - :boom: cli menu
 - :green_heart: cli menu unit tests
 ### Changed
