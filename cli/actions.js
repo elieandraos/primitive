@@ -38,9 +38,22 @@ const release = async (publishToGithub = true) => {
     // check if running from root directory
     console.log(_release.isRunningFromRootDirectory())
 
-    // check if github token is valid
+    // check if env file exists, if not scaffold it
+
+    // check if changelog file exists, if not scaffold it
+
+    // check if gitHub token is valid with repos scope
     const validToken = await _release.validateGithubToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
     console.log(validToken)
+
+    // check if gitHub user/repos/release branch exists
+
+    // check if logged in to npm
+
+    // check if git initialized and nothing staged (nothing to commit)
+
+    // check if the local branch is the release branch configured
+
 }
 
 module.exports = {

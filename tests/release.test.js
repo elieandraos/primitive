@@ -12,12 +12,13 @@ describe('release pre-requisites', () => {
         filesystem.createDirectory(tmpDir)
         filesystem.createDirectory(`${tmpDir}/src`)
 
-        cd(tmpDir)
-        await exec('npm init -y', { silent: true })
+        await exec('npm init -y', { silent: true, cwd: tmpDir })
+        global.console.log = jest.fn().mockImplementation()
     })
 
     afterAll( () => {
         filesystem.deleteDirectory(tmpDir)
+        jest.clearAllMocks()
     })
 
     test("running from root directory", () => {

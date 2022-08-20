@@ -23,8 +23,8 @@ const createDirectory = (dir, options = {}) => {
     fs.mkdirSync(dir, options)
 }
 
-const deleteDirectory = (dir) => {
-    fs.rm(dir, {recursive: true, force: true}, () => {})
+const deleteDirectory = (dir, callback = () => {}) => {
+    fs.rm(dir, {recursive: true, force: true}, callback)
 }
 
 const emptyDirectory = (src) => {
