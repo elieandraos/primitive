@@ -1,5 +1,5 @@
 # Changelog
-## v0.0.4
+## v0.0.5
 ### Added
 - :bricks: file system helper functions
 - :green_heart: filesystem tests
