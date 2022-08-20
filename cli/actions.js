@@ -1,5 +1,6 @@
 const {exec, cd} = require("shelljs")
 const colorette = require("colorette")
+const _release = require('./release')
 
 const launchElectronApp = () => {
     const dir = '@elieandraos/primitive'
@@ -33,8 +34,9 @@ const scaffoldPackageBoilerplate = () => {
     console.log('Scaffold npm package boilerplate')
 }
 
-const release = (publishToGithub) => {
-    console.log(`will publish to npm and github ${publishToGithub}`)
+const release = async (publishToGithub) => {
+   const validToken = await _release.validateGithubToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
+   console.log(validToken)
 }
 
 module.exports = {
