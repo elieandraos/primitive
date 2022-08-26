@@ -6,6 +6,7 @@
 - :green_heart: filesystem tests
 - :lock: release pre-requisites check
   - command running from root directory
+  - .env file exists
   - github token valid
 
 ## v0.0.4

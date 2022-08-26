@@ -17,6 +17,7 @@
   "dependencies": {
     "commander": "^9.4.0",
     "dotenv": "^16.0.1",
+    "inquirer": "^8.2.4",
     "shelljs": "^0.8.5",
     "validate-github-token": "^1.1.2",
     "vue": "^3.2.37",
