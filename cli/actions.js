@@ -35,7 +35,7 @@ const scaffoldPackageBoilerplate = () => {
     //console.log('Scaffold npm package boilerplate')
 }
 
-const release = async (publishToGithub = true) => {
+const release = async () => {
 
     // root directory check
     _release.isRunningFromRootDirectory() ?

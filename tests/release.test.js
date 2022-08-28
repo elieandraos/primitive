@@ -11,6 +11,7 @@ describe('release pre-requisites', () => {
     beforeAll(  async () => {
         filesystem.createDirectory(tmpDir)
         filesystem.createDirectory(`${tmpDir}/src`)
+        filesystem.createFile(`${tmpDir}/.env`)
 
         await exec('npm init -y', { silent: true, cwd: tmpDir })
         global.console.log = jest.fn().mockImplementation()
@@ -27,6 +28,14 @@ describe('release pre-requisites', () => {
 
         cd(`${tmpDir}/src`)
         expect(_release.isRunningFromRootDirectory()).toBe(false)
+    })
+
+    test(".env file exists", () => {
+        cd(tmpDir)
+        expect(_release.envFileExists()).toBe(true)
+
+        filesystem.deleteFile(`${tmpDir}/.env`)
+        expect(_release.envFileExists()).toBe(false)
     })
 
     test('github token', async () => {

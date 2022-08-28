@@ -12,10 +12,10 @@ const isDirectory = (src) => {
     return stat.isDirectory()
 }
 
-const isFile = (src) => {
-    if (!exists(src)) return false
+const isFile = (path) => {
+    if (!exists(path)) return false
 
-    const stat = fs.statSync(src)
+    const stat = fs.statSync(path)
     return stat.isFile()
 }
 
@@ -23,8 +23,23 @@ const createDirectory = (dir, options = {}) => {
     fs.mkdirSync(dir, options)
 }
 
+const createFile = (path, content = '') => {
+    fs.writeFile(path, content,  (err) => {
+        if (err) throw err
+    })
+    return true
+}
+
 const deleteDirectory = (dir, callback = () => {}) => {
     fs.rm(dir, {recursive: true, force: true}, callback)
+}
+
+const deleteFile = (path) => {
+    try {
+        fs.unlinkSync(path)
+    } catch(err) {
+        throw err
+    }
 }
 
 const emptyDirectory = (src) => {
@@ -69,5 +84,7 @@ module.exports = {
     createDirectory,
     emptyDirectory,
     copy,
-    deleteDirectory
+    deleteDirectory,
+    deleteFile,
+    createFile
 }
