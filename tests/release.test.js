@@ -1,20 +1,23 @@
 const path = require('path')
-const {exec, cd} = require("shelljs")
-
-const filesystem = require('./../cli/filesystem')
-const _release = require('./../cli/release')
+const { exec, cd } = require('shelljs')
 
 const tmpDir = path.join(__dirname, '/tmp')
+const filesystem = require('./../cli/filesystem')
+const helper = require('./../cli/release')
+const { release } = require('./../cli/actions')
+const { INVALID_ROOT, ENV_FILE_NOT_FOUND } = require('./../cli/release/errors')
 
-describe('release pre-requisites', () => {
+jest.setTimeout(30000)
+describe('Release feature test suite', () => {
 
     beforeAll(  async () => {
+        global.console.log = jest.fn().mockImplementation()
+
         filesystem.createDirectory(tmpDir)
         filesystem.createDirectory(`${tmpDir}/src`)
         filesystem.createFile(`${tmpDir}/.env`)
 
         await exec('npm init -y', { silent: true, cwd: tmpDir })
-        global.console.log = jest.fn().mockImplementation()
     })
 
     afterAll( () => {
@@ -22,27 +25,28 @@ describe('release pre-requisites', () => {
         jest.clearAllMocks()
     })
 
-    test("running from root directory", () => {
-        cd(tmpDir)
-        expect(_release.isRunningFromRootDirectory()).toBe(true)
-
+    test("it fails if not running from the root directory", async () => {
         cd(`${tmpDir}/src`)
-        expect(_release.isRunningFromRootDirectory()).toBe(false)
+        await expect(release()).rejects.toBe(INVALID_ROOT)
     })
 
-    test(".env file exists", () => {
+    test("it fails if .env file does not exist", async () => {
+        const promptEnvFileCreation = jest.spyOn(helper, 'promptEnvFileCreation').mockImplementation(() => false)
+        const scaffoldEnvFile = jest.spyOn(helper, 'scaffoldEnvFile').mockImplementation(() => {})
+
         cd(tmpDir)
-        expect(_release.envFileExists()).toBe(true)
-
         filesystem.deleteFile(`${tmpDir}/.env`)
-        expect(_release.envFileExists()).toBe(false)
+
+        await expect(release()).rejects.toBe(ENV_FILE_NOT_FOUND)
+        expect(promptEnvFileCreation).toHaveBeenCalled()
+        expect(scaffoldEnvFile).not.toHaveBeenCalled()
     })
 
-    test('github token', async () => {
-        const valid = await _release.validateGithubToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
-        expect(valid).toBe(true)
+    test("it prompts the user to create a .env file if it does not exist", async () => {
+        const promptEnvFileCreation = jest.spyOn(helper, 'promptEnvFileCreation').mockImplementation(() => true)
 
-        const invalid = await _release.validateGithubToken('foo')
-        expect(invalid).toBe(false)
+        cd(tmpDir)
+        await expect(release()).resolves.toBe(true)
+        expect(promptEnvFileCreation).toHaveBeenCalled()
     })
 })

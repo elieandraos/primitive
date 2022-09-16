@@ -31,7 +31,11 @@ const createFile = (path, content = '') => {
 }
 
 const deleteDirectory = (dir, callback = () => {}) => {
-    fs.rm(dir, {recursive: true, force: true}, callback)
+    try {
+        fs.rm(dir, {recursive: true, force: true}, callback)
+    } catch (err) {
+        throw err
+    }
 }
 
 const deleteFile = (path) => {

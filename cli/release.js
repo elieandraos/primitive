@@ -27,7 +27,7 @@ const envFileExists = () => {
     return filesystem.isFile(`${process.cwd()}/.env`)
 }
 
-const confirmEnvFileCreation = async () => {
+const promptEnvFileCreation = async () => {
     const questions = [
         {
             type: 'confirm',
@@ -49,6 +49,6 @@ module.exports = {
     validateGithubToken,
     isRunningFromRootDirectory,
     envFileExists,
-    confirmEnvFileCreation,
+    promptEnvFileCreation,
     scaffoldEnvFile
 }

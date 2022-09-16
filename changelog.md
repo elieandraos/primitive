@@ -4,7 +4,7 @@
 - :bricks: file system helper functions
 - :bricks: console helper functions
 - :green_heart: filesystem tests
-- :lock: release pre-requisites check
+- :lock: release tests
   - command running from root directory
   - .env file exists
   - github token valid

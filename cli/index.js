@@ -4,7 +4,7 @@ const cli = require('./actions')
 const createProgram = () => {
     const program = new commander.Command()
 
-    program.helpOption(false)
+    //program.helpOption(false)
 
     program
         .command('help', { isDefault: true})
@@ -31,8 +31,13 @@ const createProgram = () => {
         .command('release')
         .description('Publish package to npmjs and create github release/tag')
         .option('--github', 'publish to github', false)
-        .action(({github}) => {
-            cli.release(github)
+        .action(async ({github}) => {
+            try {
+                await cli.release(github)
+            }
+            catch (e) {
+
+            }
         })
 
     return program
