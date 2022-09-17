@@ -1,7 +1,7 @@
 const mock = require('mock-fs')
-const filesystem = require('./../cli/filesystem')
+const filesystem = require('../../cli/utils/filesystem')
 
-describe('filesystem functionalities', () => {
+describe('filesystem unit test suite', () => {
 
     beforeEach(async () => {
         // Mock an in-memory file system

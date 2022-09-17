@@ -1,23 +1,8 @@
 require('dotenv').config()
 
 const inquirer = require('inquirer')
-const filesystem = require('./filesystem')
+const filesystem = require('../utils/filesystem')
 const colorette = require('colorette')
-const { validateGitHubToken } = require('validate-github-token')
-
-const validateGithubToken = async (token) => {
-    try {
-        await validateGitHubToken(
-            token,
-            {
-                scope: { included: ['repo'] }
-            }
-        )
-        return true
-    } catch(err) {
-        return false
-    }
-}
 
 const isRunningFromRootDirectory = () => {
     return filesystem.isFile(`${process.cwd()}/package.json`)
@@ -46,7 +31,6 @@ const scaffoldEnvFile = () => {
 }
 
 module.exports = {
-    validateGithubToken,
     isRunningFromRootDirectory,
     envFileExists,
     promptEnvFileCreation,

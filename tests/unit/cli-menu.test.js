@@ -1,7 +1,7 @@
-const cli = require('../cli/actions')
-const { createProgram } = require('../cli')
+const cli = require('../../cli/actions')
+const { createProgram } = require('../../cli')
 
-describe("cli menu", () => {
+describe("cli menu unit test suite", () => {
 
     beforeEach(() => jest.clearAllMocks())
 

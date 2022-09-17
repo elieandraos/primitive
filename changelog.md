@@ -1,8 +1,10 @@
 # Changelog
 ## v0.0.5
 ### Added
+- :building_construction: cli folder/files restructuring
 - :bricks: file system helper functions
 - :bricks: console helper functions
+- :goal_net: release error messages
 - :green_heart: filesystem tests
 - :lock: release tests
   - command running from root directory

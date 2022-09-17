@@ -1,5 +1,6 @@
 const commander = require('commander')
-const cli = require('./actions')
+const release = require('./release')
+const { printCommands, launchElectronApp, scaffoldPackageBoilerplate } = require('./actions')
 
 const createProgram = () => {
     const program = new commander.Command()
@@ -10,21 +11,21 @@ const createProgram = () => {
         .command('help', { isDefault: true})
         .description('list all available commands')
         .action(() => {
-            cli.printCommands()
+            printCommands()
         })
 
     program
         .command('start')
         .description('Manage your local dev environment')
         .action(() => {
-            cli.launchElectronApp()
+            launchElectronApp()
         })
 
     program
         .command('package')
         .description('Scaffold npm package boilerplate')
         .action(() => {
-            cli.scaffoldPackageBoilerplate()
+            scaffoldPackageBoilerplate()
         })
 
     program
@@ -33,7 +34,7 @@ const createProgram = () => {
         .option('--github', 'publish to github', false)
         .action(async ({github}) => {
             try {
-                await cli.release(github)
+                await release(github)
             }
             catch (e) {
 
