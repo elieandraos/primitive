@@ -1,8 +1,8 @@
 require('dotenv').config()
 
 const inquirer = require('inquirer')
-const filesystem = require('../utils/filesystem')
 const colorette = require('colorette')
+const filesystem = require('../utils/filesystem')
 
 const isRunningFromRootDirectory = () => {
     return filesystem.isFile(`${process.cwd()}/package.json`)
@@ -30,9 +30,34 @@ const scaffoldEnvFile = () => {
     filesystem.copy(`${process.cwd()}/cli/stubs/.env.stub`, `${process.cwd()}/.env`)
 }
 
+const changelogFileExists = () => {
+    return filesystem.isFile(`${process.cwd()}/changelog.md`)
+}
+
+const promptChangelogFileCreation = async () => {
+    const questions = [
+        {
+            type: 'confirm',
+            name: 'scaffoldChangelogFile',
+            prefix: '',
+            message: colorette.dim('Generate changelog file?'),
+        }
+    ]
+
+    const { scaffoldChangelogFile } = await inquirer.prompt(questions)
+    return scaffoldChangelogFile
+}
+
+const scaffoldChangelogFile = () => {
+    filesystem.copy(`${process.cwd()}/cli/stubs/changelog.stub`, `${process.cwd()}/changelog.md`)
+}
+
 module.exports = {
     isRunningFromRootDirectory,
     envFileExists,
     promptEnvFileCreation,
-    scaffoldEnvFile
+    scaffoldEnvFile,
+    changelogFileExists,
+    promptChangelogFileCreation,
+    scaffoldChangelogFile
 }

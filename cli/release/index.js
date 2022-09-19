@@ -1,16 +1,27 @@
 const { validateGithubAccessToken } = require("../utils/github")
 const { respondOk, abortWithError, respondWarning } = require("../utils/console")
-const { INVALID_ROOT, ENV_FILE_NOT_FOUND, INVALID_GITHUB_TOKEN } = require("./errors")
-const { isRunningFromRootDirectory, envFileExists, promptEnvFileCreation, scaffoldEnvFile } = require("./tasks")
+const {
+    INVALID_ROOT,
+    ENV_FILE_NOT_FOUND,
+    INVALID_GITHUB_TOKEN,
+    CHANGELOG_FILE_NOT_FOUND
+} = require("./errors")
+const {
+    isRunningFromRootDirectory,
+    envFileExists,
+    promptEnvFileCreation,
+    scaffoldEnvFile,
+    changelogFileExists,
+    promptChangelogFileCreation,
+    scaffoldChangelogFile
+} = require("./tasks")
 
 const release = async (github = false) => {
     try {
-        // root directory check
         isRunningFromRootDirectory() ?
             respondOk('Running from package root') :
             abortWithError(INVALID_ROOT, 'You must run the command from the package root directory')
 
-        // .env file check
         if(envFileExists())
             respondOk('.env file exists')
         else {
@@ -26,9 +37,21 @@ const release = async (github = false) => {
             }
         }
 
-        // check if changelog file exists, if not scaffold it
+        if(changelogFileExists())
+            respondOk('changelog file exists')
+        else {
+            respondWarning('changelog file not found')
+            const confirmed = await promptChangelogFileCreation()
 
-        // check if gitHub token is valid with repos scope
+            if(confirmed) {
+                scaffoldChangelogFile()
+                respondOk('.changelog file created', 'Fill-in the release notes')
+            }
+            else {
+                abortWithError(CHANGELOG_FILE_NOT_FOUND)
+            }
+        }
+
         const validToken = await validateGithubAccessToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
         validToken ?
             respondOk('Github token is valid') :
