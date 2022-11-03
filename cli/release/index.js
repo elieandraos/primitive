@@ -1,11 +1,13 @@
 const { validateGithubAccessToken } = require("../utils/github")
 const { respondOk, abortWithError, respondWarning } = require("../utils/console")
+
 const {
     INVALID_ROOT,
     ENV_FILE_NOT_FOUND,
     INVALID_GITHUB_TOKEN,
     CHANGELOG_FILE_NOT_FOUND
 } = require("./errors")
+
 const {
     isRunningFromRootDirectory,
     envFileExists,
@@ -37,20 +39,20 @@ const release = async (github = false) => {
             }
         }
 
-        if(changelogFileExists())
-            respondOk('changelog file exists')
-        else {
-            respondWarning('changelog file not found')
-            const confirmed = await promptChangelogFileCreation()
-
-            if(confirmed) {
-                scaffoldChangelogFile()
-                respondOk('.changelog file created', 'Fill-in the release notes')
-            }
-            else {
-                abortWithError(CHANGELOG_FILE_NOT_FOUND)
-            }
-        }
+        // if(changelogFileExists())
+        //     respondOk('changelog file exists')
+        // else {
+        //     respondWarning('changelog file not found')
+        //     const confirmed = await promptChangelogFileCreation()
+        //
+        //     if(confirmed) {
+        //         scaffoldChangelogFile()
+        //         respondOk('.changelog file created', 'Fill-in the release notes')
+        //     }
+        //     else {
+        //         abortWithError(CHANGELOG_FILE_NOT_FOUND)
+        //     }
+        // }
 
         const validToken = await validateGithubAccessToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
         validToken ?
