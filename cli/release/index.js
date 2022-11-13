@@ -39,25 +39,25 @@ const release = async (github = false) => {
             }
         }
 
-        // if(changelogFileExists())
-        //     respondOk('changelog file exists')
-        // else {
-        //     respondWarning('changelog file not found')
-        //     const confirmed = await promptChangelogFileCreation()
-        //
-        //     if(confirmed) {
-        //         scaffoldChangelogFile()
-        //         respondOk('.changelog file created', 'Fill-in the release notes')
-        //     }
-        //     else {
-        //         abortWithError(CHANGELOG_FILE_NOT_FOUND)
-        //     }
-        // }
+        if(changelogFileExists())
+            respondOk('changelog file exists')
+        else {
+            respondWarning('changelog file not found')
+            const confirmed = await promptChangelogFileCreation()
 
-        const validToken = await validateGithubAccessToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
-        validToken ?
-            respondOk('Github token is valid') :
-            abortWithError(INVALID_GITHUB_TOKEN, 'Update GITHUB_PERSONAL_ACCESS_TOKEN in your .env file with a valid token')
+            if(confirmed) {
+                scaffoldChangelogFile()
+                respondOk('.changelog file created', 'Fill-in the release notes')
+            }
+            else {
+                abortWithError(CHANGELOG_FILE_NOT_FOUND)
+            }
+        }
+
+        // const validToken = await validateGithubAccessToken(process.env.GITHUB_PERSONAL_ACCESS_TOKEN)
+        // validToken ?
+        //     respondOk('Github token is valid') :
+        //     abortWithError(INVALID_GITHUB_TOKEN, 'Update GITHUB_PERSONAL_ACCESS_TOKEN in your .env file with a valid token')
 
         return true
         // check if gitHub user/repos branch exists (https://docs.github.com/en/rest/repos/repos#get-a-repository)

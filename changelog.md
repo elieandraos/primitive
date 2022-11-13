@@ -9,6 +9,7 @@
 - :lock: release tests
   - command running from root directory
   - .env file exists
+  - changelog file exists
   - github token valid
 
 ## v0.0.4

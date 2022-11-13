@@ -30,7 +30,7 @@ const createFile = (path, content = '') => {
     return true
 }
 
-const deleteDirectory = async (dir, callback = () => {}) => {
+const deleteDirectory = (dir, callback = () => {}) => {
     try {
         fs.rm(dir, {recursive: true, force: true}, callback)
     } catch (err) {
